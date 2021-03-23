@@ -365,7 +365,7 @@ class SplunkVersionControlBackup:
                         logger.info("i=\"%s\" Dropping the backup of name=\"%s\" of type=%s in app context app=%s with owner=%s because nullQueue entries cannot be created via REST API (and they are not required in search heads)" % (self.stanzaName, info["name"], type, app, info["owner"]))
                     else:
                         infoList[sharing].append(info)
-                        logger.info("i=\"%s\" Recording name=\"%s\" info for type=%s in app context app=%s with owner=%s" % (self.stanzaName, info["name"], type, app, info["owner"]))
+                        logger.info("i=\"%s\" Recording name=\"%s\" info for type=%s in app context app=%s with owner=%s, sharing=%s" % (self.stanzaName, info["name"], type, app, info["owner"], sharing))
                     
                     logger.debug("Updated time is updated=%s" % (updated))
                     epochUpdatedTime = int((self.determineTime(updated) - datetime(1970,1,1)).total_seconds())
